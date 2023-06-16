@@ -1,0 +1,157 @@
+\usepackage[a4paper, left=3cm, right=2.5cm, top=2.5cm, bottom=3cm, headheight=20.6pt]{geometry}
+\usepackage[utf8]{inputenc}
+
+% Deutsche Sprache
+\usepackage[ngerman]{babel}
+
+\usepackage{graphicx}
+\usepackage[parfill]{parskip} % paragraph new line
+\usepackage{float}  % Bildposition
+
+% Mathematik 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\numberwithin{equation}{section} % Numerierung mit Section
+
+\usepackage[per-mode=symbol]{siunitx} % Einheiten
+\sisetup{locale = DE}
+
+% Kopfzeile und Fusszeile 
+\usepackage{fancyhdr}
+
+% Abkürzungsliste
+% Abkürzungen im Text verwenden, damit sie in der Liste erscheinen.
+\usepackage[printonlyused, withpage, smaller]{acronym}
+
+\usepackage{nomencl}
+\makenomenclature
+
+% Generiert Mustertext Lorem ipsum
+\usepackage{lipsum}
+
+% linebraks within tables
+\usepackage{makecell}
+
+% Benutzerdefinierte Farben
+\usepackage{soul}
+\usepackage{xcolor}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.98,0.98,0.98}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{fhwn}{rgb}{0.09,0.19,0.45}
+
+% Bibliothek 
+\usepackage[backend=biber,style=ieee,citestyle=numeric-comp]{biblatex}
+\addbibresource{Quellen.bib}
+\setlength\bibitemsep{6pt}
+\usepackage{csquotes} % Automatische "
+
+% Überschrift Formatierung
+\usepackage{titlesec}
+\titleformat{\section}
+{\color{fhwn}\normalfont\Large\bfseries}
+{\color{fhwn}\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\color{fhwn}\normalfont\bfseries}
+{\color{fhwn}\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\color{fhwn}\normalfont\bfseries}
+{\color{fhwn}\thesubsubsection}{1em}{}
+
+% Referenz / Beschriftungen
+\usepackage{hyperref}
+\usepackage[figure]{hypcap}
+
+\makeatletter
+\renewcommand{\fnum@figure}{Abb. \thefigure}
+\renewcommand{\fnum@table}{Tab. \thetable}
+\makeatother
+
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{listings}
+
+
+\captionsetup{format=hang, strut=off}
+\usepackage[figurewithin=section]{caption} % Figure count per section
+
+% Änderung der Bezeichnung Listings -> Code
+\renewcommand{\lstlistlistingname}{Programmcode}
+\renewcommand{\lstlistingname}{Programmcode}
+
+% Programmcode Darstellung
+\lstset{
+  backgroundcolor=\color{mygray},  % Hintergrundfarbe wählen - braucht \usepackage{color} oder \usepackage{xcolor};
+  basicstyle=\scriptsize\ttfamily, % Schriftgröße 
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % neue Zeilen werden automatisch erstellt
+  captionpos=b,                    % Beschreibung wird unten gesetzt b...bottom (und oben t...top)
+  commentstyle=\color{mygreen},    % Farbe von erkannten Code Kommentaren 
+  extendedchars=\true,             % Erlaubt nicht in ASCII enthaltene Zeichen zu benutzen, funktioniert nicht mit UTF8
+  texcl=true,                      % Kommentare auch UTF-8
+  firstnumber=1,                   % Beginn der Zeilenaufzählung mit 1, kann geändert werden im Fliesstext
+  frame=tb,	                       % Rahmen um den Code 
+  %frameround=tttt\thinlines,      % Rahmen bekommt mit t runde Ecken und mit f rechtwinkelige Ecken
+  keepspaces=true,                 % 
+  keywordstyle=\color{blue},       % Erkannte Schlüsselwörter werden blau markiert
+  morekeywords={*,...},            % Schlüsselwörter benutzerdefieniert erweiterbar
+  numbers=left,                    % Zahlenposition für die Aufzählung, mögliche Werte sind (none, left, right)
+  numbersep=5pt,                   % Abstand der Zahlen zum Code
+  numberstyle=\tiny\color{fhwn},   % Größe der Zahlen und die Farbe
+  rulecolor=\color{fhwn},          % Farbe vom Rahmen
+  showspaces=false,                % 
+  showstringspaces=false,          % Strings sollen nicht unterstrichen werden
+  showtabs=false,                  % tabs sollen nicht angezeigt werden
+  stepnumber=1,                    % inkrement der Zeilennummer mit 1 --> jede Zeile wird numeriert 
+  stringstyle=\color{mymauve},     % String wird violet markiert
+  tabsize=2,                       % 
+  framextopmargin=5pt,             % oberer Rahmenabstand zur ersten Zeile
+  framexbottommargin=5pt,          % unterer Rahmenabstand zur letzten Zeile
+  xleftmargin=.15\textwidth,       
+  xrightmargin=.15\textwidth,
+}
+
+% Ermöglicht den Author und Titel im Text zu verwenden mit: OBSOLETE
+% \runauthor \runtitle
+%\makeatletter 
+%\let\runauthor\@author
+%\let\runtitle\@title
+%\let\runsection\@section
+%\makeatother
+
+\newtoks\meinName
+
+\newtoks\meinTitel
+
+
+\newtoks\meineMartikelnummer
+
+\newtoks\meinStudiengang
+
+\newtoks\meinBetreuer
+
+\newtoks\meinBegutachter
+
+
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or Januar% 1
+  \or Februar% 2
+  \or März% 3
+  \or April% 4
+  \or Mai% 5
+  \or Juni% 6
+  \or Juli% 7
+  \or August% 8
+  \or September% 9
+  \or Oktober% 10
+  \or November% 11
+  \or Dezember% 12
+  \fi}
+
+% Setzt die Section-Bezeichnung in den markright
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{}

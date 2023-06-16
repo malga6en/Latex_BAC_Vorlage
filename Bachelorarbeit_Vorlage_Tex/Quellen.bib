@@ -1,0 +1,101 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// Hier kann der Aufbau für die jeweiligen Werktyps nachgelesen werden.
+// EN: http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf
+// DE: http://mirrors.ibiblio.org/CTAN/info/translations/biblatex/de/biblatex-de-Benutzerhandbuch.pdf
+// --> siehe "Entry Types"/"Eingabetypen" 
+// --> Beispiel inproceedings: Seite 13/12
+//     erforderlich: author, title, booktitle, year oder date
+//     optional: rest --> siehe unten paper:example1
+// Eingabetypen sind Werktyp abhängig!!
+// 
+// IEEE ermöglicht das Exportieren der Quellangaben.
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+@inproceedings{publikation:publikationtitel1,
+  author          = {Vorname Nachname},
+  title           = {Mustertitel1},
+  booktitle       = {Musterkonferenz},
+  year            = {2016},
+  date            = {},
+  editor          = {},
+  subtitle        = {},
+  titleaddon      = {},
+  maintitle       = {},
+  mainsubtitle    = {},
+  maintitleaddon  = {},
+  booksubtitle    = {},
+  booktitleaddon  = {},
+  eventtitle      = {},
+  eventtitleaddon = {},
+  eventdate       = {},
+  venue           = {},
+  language        = {},
+  volume          = {},
+  part            = {},
+  volumes         = {},
+  series          = {},
+  number          = {},
+  note            = {},
+  organization    = {},
+  publisher       = {},
+  location        = {},
+  month           = {},
+  isbn            = {},
+  eid             = {},
+  chapter         = {},
+  pages           = {},
+  addendum        = {},
+  pubstate        = {},
+  doi             = {},
+  eprint          = {},
+  eprintclass     = {},
+  eprinttype      = {},
+  url             = {},
+  urldate         = {}
+}
+
+// Nicht definierte Eingabetypen weglassen.
+@inproceedings{publikation:publikationtitel2,
+  author    = {Vorname1 Nachname1 and Vorname2 Nachname2},
+  title     = {Mustertitel1},
+  booktitle = {Musterkonferenz},
+  year      = {2023},
+  location  = {Berlin}
+}
+
+@book{buch:buchtitel1,
+  author    = {Vorname Nachname},
+  title     = {Muster Buchtitel},
+  publisher = {Muster Verlag},
+  location  = {Wiener Neustadt},
+  date      = {1995},
+  pages     = {5--25}
+}
+
+@Article{zeitschrift:zeitschrifttitel1,
+author = {Vorname Nachname},
+title = {Muster Zeitschrifttitel},
+journal = {Musterzeitschrift},
+series = {3},
+volume = {15},
+number = {7},
+year = {1995}
+}
+
+@online{web:webseite1,
+  author  = {{Fachhochschule Wiener Neustadt GmbH.}},
+  title   = {Fakultät Technik der FHWN},
+  url     = {https://www.fhwn.ac.at/hochschule/fakultaeten/technik},
+  year    = {2023},
+  urldate = {2023-06-15}
+}
+
+@manual{datasheet:can,
+  author       = {Steve Corrigan},
+  organization = {Texas Instruments Inc.},
+  title        = {Introduction to the Controller Area Network (CAN)},
+  year         = {2016},
+  month        = {05},
+  url          = {https://www.ti.com/lit/an/sloa101b/sloa101b.pdf},
+  urldate      = {2023-05-07},
+  note         = {Rev. B}
+}

@@ -1,0 +1,43 @@
+\section{Überschrift Ebene 1}
+
+\lipsum[1][1-8]
+
+\subsection{Überschrift Ebene 2}
+
+Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore
+et dolore magna aliqua \cite{publikation:publikationtitel1}. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+laboris nisi ut aliquid ex ea commodi consequat, siehe Programmcode \ref{lst:code1} und Anhang \ref{anhang:Matlabcode1}. Quis aute iure
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, siehe
+Programmcode \ref{lst:code2}, siehe Anhang \ref{anhang:Matlabcode2}.
+
+\begin{lstlisting}[language=Matlab,caption={Beschriftung des eigenen Programmcodes.},label={lst:code1}]
+% MATLAB-Code Bsp 3.5 IT1-Strecke
+clc; clear all; close all;
+s = tf('s');
+%% Identifikation
+T1 = 0.15; % aus Tangente
+ki = 0.95; % aus Messung
+G = ki/(s*(1+s*T1))
+figure(1); step(G,1); grid on
+title('Sprungantwort Strecke');
+\end{lstlisting}
+
+\begin{lstlisting}[language=Matlab,caption={Beschriftung des übernommenen Programmcodes\cite{publikation:publikationtitel1}.},label={lst:code2}]
+%% Std-Regelkreis
+kR = 10;
+K = kR % P-Regler
+Fo = K*G; %  ÜF-offene Schleife
+T = Fo/(1+Fo); % Führungs-ÜF
+T = minreal(T) % mit Kürzen
+Fst = G/(1+Fo); % Störungs-ÜF 
+figure(2); step(T); grid on
+title('Führungs-Sprung mit P-Regler')
+\end{lstlisting}
+
+\subsection{Überschrift Ebene 2}
+
+Lorem ipsum, siehe Anhang \ref{anhang:PNGBILD}, dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore
+et dolore magna aliqua \cite{publikation:publikationtitel1}. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate
+velit esse cillum dolore eu fugiat nulla pariatur \cite{buch:buchtitel1}. Excepteur sint obcaecat cupiditat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diese Latex-Datei ist eine Vorlage für die BAC-Arbeit.
+% *Wurde übernommen von Florian HYE
+% *Wurde angepasst von Mustafa Algan
+% *Version 1.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+
+% Voreinstellungen werden eingebunden.
+\input{10_Vorspann/10_Voreinstellungen}
+
+% LESEN Sie die Kommentare !!!
+
+\meinName{Max Muster}                     % Vorname Nachname
+\meinTitel{Titel der Bachelorarbeit}      % Titel Ihrer Arbeit
+\meineMartikelnummer{123456789}           % Martikelnummer
+\meinStudiengang{Robotik}                 % Studiengang
+\meinBetreuer{Dr. Otto Müllermeier, MSc}  % Ihr Betreuer
+\meinBegutachter{Dr. Oscar Maier, MSc}    % Ihr Begutachter
+
+% Ab hier kann mit dem \include Befehl die Seiten eingebunden werden.
+
+% BEGINN der Dokumentation 
+\begin{document}
+
+% ___________________________________________________
+% TITELSEITE
+% ___________________________________________________  
+\include{10_Vorspann/11_Titelseite}
+
+% ___________________________________________________
+% EIDESSTATTLICHE ERKLÄRUNG
+% ___________________________________________________
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headruleskip}{0.2cm}
+\renewcommand{\footruleskip}{0.5cm}
+
+\pagestyle{fancy}
+\pagenumbering{Roman}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+\include{10_Vorspann/12_Eidesstattliche_Erklärung}
+
+% ___________________________________________________
+% VORSPANN 
+% ___________________________________________________
+\renewcommand{\headrulewidth}{0.4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Bachelorarbeit}
+\fancyhead[R]{\the\meinName}
+\fancyfoot[C]{\thepage}
+
+\include{10_Vorspann/13_Kurzzusammenfassung} % Zusammenfassung anpassen
+\include{10_Vorspann/14_Danksagung}          % Danksagung anpassen/entfernen
+\include{10_Vorspann/15_Abkürzungen}         % Liste der Abkürzungen anpassen/entfernen 
+\include{10_Vorspann/16_Formelzeichen}       % Liste der Formelzeichen anpssen/entfernen
+\tableofcontents                             % Inhaltsverzeichnis
+
+% ___________________________________________________
+% HAUPTTEIL
+% ___________________________________________________
+\newpage
+
+\pagenumbering{arabic}
+\fancyhf{}
+\fancyhead[L]{Kapitel \thesection}
+\fancyhead[R]{\rightmark}
+\fancyfoot[C]{\thepage}
+
+% Ab HIER 
+\include{20_Hauptteil/21_Aufgabenstellung}
+\include{20_Hauptteil/22_StandderTechnik}
+\include{20_Hauptteil/23_Kapitel3}
+\include{20_Hauptteil/24_Kapitel4}
+\include{20_Hauptteil/25_Zusammenfassung}
+% BIS hierher Ihre Baustelle.
+
+% ___________________________________________________
+% VERZEICHNISSE & ANHANG
+% ___________________________________________________
+\newpage
+
+\fancyhead{}
+\fancyhead[L]{Literaturverzeichnis}
+
+%  QUELLEN IN DER DATEI "Quellen.bib" ANGEBEN !!!
+\printbibliography[title={Literaturverzeichnis}, heading=bibintoc]
+
+\newpage
+
+\fancyhead{}
+\fancyhead[L]{Darstellungsverzeichnis}
+
+% Diese Verzeichnisse sind optional
+% Weglassen der jeweiligen commands entfernt die Verzeichnisse. 
+\listoffigures      % Abbildungsverzeichnis 
+\listoftables       % Tabellenverzeichnis
+\lstlistoflistings  % Angepasste Listing in dem Fall Programmcodeverzeichnis
+
+\newpage
+
+\fancyhead[L]{Anhang}
+
+% Anhang kann in mehrere .tex Dateien aufgeteilt werden.
+\include{30_Ende/31_Anhang} 
+
+\end{document}              % Ende der Dokumentation
